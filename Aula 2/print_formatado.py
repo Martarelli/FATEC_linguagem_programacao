@@ -13,3 +13,8 @@ print("%s tem %-5i anos de idade e obteve nota média de %.2f" %(nome, idade,med
 print("%-12s tem %i anos de idade e obteve nota média de %.2f" %(nome, idade,media))
 print("%12s tem %i anos de idade e obteve nota média de %.2f" %(nome, idade,media))
 print("%12s tem %i anos de idade e obteve nota média de %10.2f" %(nome, idade,media))
+
+print("{0:>30}".format((nome)))
+print("{0:^30}".format((nome)))
+print("{0:<30}".format((nome)))
+print("{0:.2}".format((nome)))
