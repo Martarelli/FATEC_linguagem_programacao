@@ -3,15 +3,16 @@
 
 def conversao():
     print("Olá, tudo bem? Você informará o número de segundos e será informado em horas, minutos e segundos");
-    seg = int(input("Digite a quantidade de segundos: "));
-    horas = 0;
-    minutos = 0;
-    segundos = 0;
+    segundos = int(input("Digite a quantidade de segundos: "));
 
-    if seg >= 60:
-        minutos = seg // 60;
-    print(minutos);
+    # segundos = segundos % (24 * 3600) ;
 
+    horas = segundos // 3600;
+    segundos %= 3600;
+    minutos = segundos // 60;
+    segundos %= 60;
+
+    print("%.0f:%02.0f:%02.0f"%(horas, minutos, segundos))
 
 def main():
     conversao();
