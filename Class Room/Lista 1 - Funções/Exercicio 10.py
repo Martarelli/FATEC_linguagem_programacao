@@ -10,7 +10,7 @@ def calculo():
             for j in range(1, i + 1):
                 fat = fat * j;
             S += (1 / fat);
-        print("O valor S é: %.5f"%(N, S))
+        print("O valor S é: %.5f"%(S))
     else:
         print("O número informado não pode ser igual ou menor que 0!!!")
         calculo();
