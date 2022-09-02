@@ -7,7 +7,7 @@ def duracao_jogo():
     hora_termino = int(input("Informe a hora de termino do jogo: "));
     minuto_termino = int(input("Informe os minutos do termino do jogo: "));
 
-    if hora_inicio <= hora_termino and minuto_inicio <= minuto_termino:
+    if hora_inicio <= hora_termino and minuto_inicio < minuto_termino:
         hora_min = (hora_termino - hora_inicio) * 60;
         minutos = minuto_termino - minuto_inicio;
         duracao = hora_min + minutos;
@@ -19,7 +19,7 @@ def duracao_jogo():
         minutos = minuto_inicio - minuto_termino;
         duracao = hora_min + minutos;
         print("A duração do jogo foi de %i minutos"%duracao);
-    elif hora_inicio > hora_termino and minuto_inicio <= minuto_termino:
+    elif hora_inicio > hora_termino and minuto_inicio < minuto_termino:
         hora_min = (hora_termino + 24 - hora_inicio) * 60;
         minutos = minuto_termino - minuto_inicio;
         duracao = hora_min + minutos; 
