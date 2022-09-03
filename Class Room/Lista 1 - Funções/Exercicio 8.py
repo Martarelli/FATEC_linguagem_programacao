@@ -22,7 +22,8 @@ def duracao_jogo():
         if hora_min == 0:
             hora_min = 23 * 60;
             minutos = minuto_termino - minuto_inicio + 60;
-        minutos = minuto_inicio - minuto_termino;
+        else:
+            minutos = minuto_termino - minuto_inicio;
         duracao = hora_min + minutos;
         print("A duração do jogo foi de %i minutos"%duracao);
     elif hora_inicio > hora_termino and minuto_inicio < minuto_termino:
