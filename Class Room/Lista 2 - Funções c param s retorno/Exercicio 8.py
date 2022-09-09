@@ -1,0 +1,1 @@
+# 8. (Função sem retorno com parâmetro) Faça uma função/método que calcule a média de um aluno que realizou duas provas (P1 e P2), a partir desta média, chame/crie OUTRA função que verifique se esta média aprova ou reprova o aluno. Aqui deverá ocorrer nas duas funções, PASSAGEM DE PARÂMETRO POR VALOR.
