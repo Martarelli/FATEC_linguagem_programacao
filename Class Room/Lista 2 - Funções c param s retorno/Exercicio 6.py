@@ -1,0 +1,1 @@
+# 6. (Função sem retorno com parâmetro) Faça uma função/método para a partir de um valor inicial e um valor final realizar o acumulo desse valores e apresentar o resultado. Não use vetor. Aqui deverá ocorrer para as duas variáveis, PASSAGEM DE PARÂMETRO POR VALOR.
