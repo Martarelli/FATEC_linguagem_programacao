@@ -1,0 +1,1 @@
+# 7. (Função sem retorno com parâmetro) Faça uma função/método para calcular a tabuada de um número informado pelo usuário. Crie outra função que calcule a tabuada de um intervalo, por exemplo realize as taduabas do 3 ao 8. Aqui deverá ocorrer para as duas funções, PASSAGEM DE PARÂMETRO POR VALOR.
