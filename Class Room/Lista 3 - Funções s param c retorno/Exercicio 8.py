@@ -3,3 +3,27 @@
 # 1º número perfeito: 6
 # 2º número perfeito: 28
 # 3º número perfeito: 496
+def num_perfeito():
+    A = []
+    num_atual = 1
+    while len(A) < 3:
+        divisores = []
+        for i in range(1, num_atual):
+            if num_atual % i == 0:
+                divisores.append(i)
+
+        soma = 0
+        for j in range(len(divisores)):
+            soma += divisores[j]
+
+        if soma == num_atual:
+            A.append(num_atual)
+        
+        num_atual += 1   
+        
+    return A     
+
+def main():
+    print(num_perfeito())
+    
+main()
