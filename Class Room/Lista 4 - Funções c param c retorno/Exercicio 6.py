@@ -15,6 +15,7 @@
 
 # A função da construção do menu, chamará todas as outras passando a elas o valor digitado.
 
+
 def quadrado(n1):
     return n1 * n1
 
@@ -22,17 +23,30 @@ def cubo(n1):
     return n1 * n1 * n1
 
 def raiz(n1):
-    return pow(n1, 2)
+    return n1 ** 0.5
+
+def raiz_cubica(n1):
+    return n1 ** (1/3)
 
 def calculadora(opt):
     n1 = int(input("Digite um número: "))
     if opt == 1:
-        print(raiz(n1))
-        
+        return quadrado(n1)
+    elif opt == 2:
+        return cubo(n1)
+    elif opt == 3:
+        return raiz(n1)
+    elif opt == 4:
+        return raiz_cubica(n1)
     
 def main():
-    print("Menu de cálculos\n1.Número ao quadrado\n2.Número ao cubo\n3.Raiz do número\n4.Raiz cúbica do número\nQual é a opção desejada?")
-    opt = int(input())
-    calculadora(opt)
-    
+    ligado = True
+    while ligado == True:
+        print("Menu de cálculos\n1.Número ao quadrado\n2.Número ao cubo\n3.Raiz do número\n4.Raiz cúbica do número\n")
+        opt = int(input("Qual é a opção desejada?: "))
+        if opt >= 1 and opt <=4:
+            print("O resultado é: ", calculadora(opt) , "\n")
+        else:
+            ligado = False
+            print("Volte sempre :)")
 main()
