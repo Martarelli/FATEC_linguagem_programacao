@@ -55,7 +55,7 @@ def main():
             tot_isentos += 1
             
     print("Total de Veiculos isentos: %i"%tot_isentos)
-    print("Media do valor dos veiculos: %.2f"%(tot_valor/tot_veic))
-    print("Total de impostos arrecadados: %.2f"%tot_IPVA)
+    print("Media do valor dos veiculos: R$%.2f"%(tot_valor/tot_veic))
+    print("Total de impostos arrecadados: R$%.2f"%tot_IPVA)
   
 main()
