@@ -3,7 +3,7 @@
 # Dependendo do ano de fabricação, pode ocorrer isenção de IPVA, ou seja, não é pago nada, referente a este imposto. O estado de São Paulo concede isenção a partir de 20 anos de fabricação.
 # Atendendo a 10 proprietários de automóveis, a partir dos anos de fabricação, tipo de veículo automotor e dos valores dos carros, crie um programa que atenda cada item a seguir, na main() calcule e apresente:
 
-# a) Quantidade de veículos automotores.
+# a) Quantidade de veículos automotores isentos.
 
 # b) Valor do IPVA de veículo automotor, use a função requerida.
 
