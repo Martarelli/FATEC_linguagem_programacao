@@ -6,3 +6,17 @@
 # Lembrete, na função que tem parâmetro, este, neste caso, na programação, é chamado de PASSAGEM DE PARÂMETRO POR VALOR.
 
 # Curiosidade: Palete é um estrado de madeira, metal ou plástico que é utilizado para empilhar ou transportar materiais por meio de empilhadeiras.
+def paletes():
+    qtd_recebida = int(input("Qual a quantidade de produtos recebidos?: "))
+    qtd_paletes = qtd_recebida // 8
+    resto = qtd_recebida - (qtd_paletes * 8)
+    print("Quantidade de paletes necessários: %i - Resto de produtos %i"%(qtd_paletes, resto))
+    
+    return resto
+    
+def main():
+    resto_paletes = paletes()
+    print(resto_paletes)
+    
+    
+main()
