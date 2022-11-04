@@ -18,3 +18,7 @@ Linha número 17
 Linha número 18
 Linha número 19
 Linha número 20
+Linha número com append 1
+Linha número com append 2
+Linha número com append 3
+Linha número com append 4
