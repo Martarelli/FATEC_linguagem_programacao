@@ -2,23 +2,3 @@ Linha número 1
 Linha número 2
 Linha número 3
 Linha número 4
-Linha número 5
-Linha número 6
-Linha número 7
-Linha número 8
-Linha número 9
-Linha número 10
-Linha número 11
-Linha número 12
-Linha número 13
-Linha número 14
-Linha número 15
-Linha número 16
-Linha número 17
-Linha número 18
-Linha número 19
-Linha número 20
-Linha número com append 1
-Linha número com append 2
-Linha número com append 3
-Linha número com append 4
