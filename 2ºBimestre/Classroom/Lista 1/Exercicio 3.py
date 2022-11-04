@@ -16,7 +16,7 @@ class Produto:
 def cadastrar():
     prod = Produto()
     cad = []
-    for i in range(1,3):
+    for i in range(1,6):
         prod = Produto()
         prod.codigo = int(input("Digite o codigo do produto %i: "%i))
         prod.nome = input("Digite o nome do produto %i: "%i)
