@@ -72,8 +72,8 @@ class Clientes:
 class Documentos:
     num_doc = 0
     cod_cli = 0
-    dia_venc = ""
-    dia_pag = ""
+    dia_venc = 0
+    dia_pag = 0
     valor = 0.0
     juros = 0.0
     
@@ -99,12 +99,19 @@ def main():
         op = int(input("Digite a opção desejada: "))
     
         if op == 1:
+            existe = True
             if len(clientes) < 2:
                 cliente = Clientes()
                 cliente.cod_cli = int(input("Código do cliente: "))
-                cliente.nome = input("Nome do cliente: ")
-                cliente.fone = input("Telefone: ")
-                clientes.append(cliente)
+                for i in clientes:
+                    if cliente.cod_cli == i.cod_cli:
+                        existe = False
+                if existe:
+                    cliente.nome = input("Nome do cliente: ")
+                    cliente.fone = input("Telefone: ")
+                    clientes.append(cliente)
+                else:
+                    print("Código já cadastrado...")
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
         elif op == 2:
@@ -115,6 +122,29 @@ def main():
                 print("Telefone: ", i.fone)
                 print("------------------------------")
             print("")
+        elif op == 3:
+            if len(documentos) < 4:
+                existe = False
+                doc = Documentos()
+                doc.cod_cli = int(input("Código do cliente: "))
+                for i in clientes:
+                    if doc.cod_cli == i.cod_cli:
+                        existe = True
+                if existe:
+                    doc.num_doc = int(input("Número do Documento: "))
+                    doc.dia_venc = int(input("Dia do vencimento: "))
+                    doc.dia_pag = int(input("Dia do pagamento: "))
+                    doc.valor = float(input("Valor: "))
+                    if doc.dia_pag > doc.dia_venc:
+                        doc.juros = doc.valor * 0.05
+                    else:
+                        doc.juros = 0
+                    documentos.append(doc)
+                else:
+                    print("Cliente não cadastrado...")
+                
+            else:
+                print("\nNão é possível cadastrar, o cadastro está cheio...\n")
         elif op == 0:
             pass
 
