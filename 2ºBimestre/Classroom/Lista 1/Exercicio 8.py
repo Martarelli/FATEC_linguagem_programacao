@@ -110,6 +110,7 @@ def main():
                     cliente.nome = input("Nome do cliente: ")
                     cliente.fone = input("Telefone: ")
                     clientes.append(cliente)
+                    existe = True
                 else:
                     print("Código já cadastrado...")
             else:
@@ -127,9 +128,11 @@ def main():
                 existe = False
                 doc = Documentos()
                 doc.cod_cli = int(input("Código do cliente: "))
+                
                 for i in clientes:
                     if doc.cod_cli == i.cod_cli:
                         existe = True
+
                 if existe:
                     doc.num_doc = int(input("Número do Documento: "))
                     doc.dia_venc = int(input("Dia do vencimento: "))
@@ -140,11 +143,23 @@ def main():
                     else:
                         doc.juros = 0
                     documentos.append(doc)
+                    existe = False
                 else:
                     print("Cliente não cadastrado...")
                 
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
+        elif op == 4:
+            for i in documentos:
+                print("\n------------------------------")
+                print("Codigo do Cliente: ", i.cod_cli)
+                print("Codigo do Documento: ", i.cod_doc)
+                print("Dia Vencimento: ", i.dia_venc)
+                print("Dia Pagamento: ", i.dia_pag)
+                print("Valor: ", i.valor)
+                print("Juros: ", i.juros)
+                print("------------------------------")
+            print("")
         elif op == 0:
             pass
 
