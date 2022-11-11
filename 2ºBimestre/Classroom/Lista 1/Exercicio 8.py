@@ -77,11 +77,22 @@ class Documentos:
     valor = 0.0
     juros = 0.0
     
+def ExcluirSemDocumento(clientes, documentos):
+    clientes_com_cadastro = []
+    for i in clientes:
+        for j in documentos:
+            if i.cod_cli == j.cod_cli and i not in clientes_com_cadastro:
+                clientes_com_cadastro.append(i)
+                continue
+         
+    return clientes_com_cadastro
 
 def main():
     documentos = []
     clientes = []
     op = 1
+
+    
     
     while(op != 0):
         print("1 - Cadastrar clientes")
@@ -116,13 +127,14 @@ def main():
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
         elif op == 2:
-            for i in clientes:
-                print("\n------------------------------")
-                print("Codigo: ", i.cod_cli)
-                print("Nome: ", i.nome)
-                print("Telefone: ", i.fone)
-                print("------------------------------")
-            print("")
+            if len(clientes) != 0:
+                for i in clientes:
+                    print("\n------------------------------")
+                    print("Codigo: ", i.cod_cli)
+                    print("Nome: ", i.nome)
+                    print("Telefone: ", i.fone)
+                    print("------------------------------")
+                print("")
         elif op == 3:
             if len(documentos) < 4:
                 existe = False
@@ -137,7 +149,7 @@ def main():
                     doc.num_doc = int(input("Número do Documento: "))
                     doc.dia_venc = int(input("Dia do vencimento: "))
                     doc.dia_pag = int(input("Dia do pagamento: "))
-                    doc.valor = float(input("Valor: "))
+                    doc.valor = float(input("Valor: R$"))
                     if doc.dia_pag > doc.dia_venc:
                         doc.juros = doc.valor * 0.05
                     else:
@@ -153,15 +165,19 @@ def main():
             for i in documentos:
                 print("\n------------------------------")
                 print("Codigo do Cliente: ", i.cod_cli)
-                print("Codigo do Documento: ", i.cod_doc)
+                print("Codigo do Documento: ", i.num_doc)
                 print("Dia Vencimento: ", i.dia_venc)
                 print("Dia Pagamento: ", i.dia_pag)
-                print("Valor: ", i.valor)
-                print("Juros: ", i.juros)
+                print("Valor: R$", i.valor)
+                print("Juros: R$", i.juros)
                 print("------------------------------")
             print("")
+        elif op == 5:
+            clientes = ExcluirSemDocumento(clientes, documentos)
+  
+                    
         elif op == 0:
-            pass
+            continue
 
     
 main()
