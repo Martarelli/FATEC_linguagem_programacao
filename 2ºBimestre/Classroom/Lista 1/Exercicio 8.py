@@ -107,6 +107,14 @@ def main():
                 clientes.append(cliente)
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
+        elif op == 2:
+            for i in clientes:
+                print("\n------------------------------")
+                print("Codigo: ", i.cod_cli)
+                print("Nome: ", i.nome)
+                print("Telefone: ", i.fone)
+                print("------------------------------")
+            print("")
         elif op == 0:
             pass
 
