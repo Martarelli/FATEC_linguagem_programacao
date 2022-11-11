@@ -64,3 +64,51 @@
 #     Alterar as informações sobre os clientes — só NÃO altere o código do cliente.
 
 #     Mostrar o total de documentos de determinado cliente.
+class Clientes:
+    cod_cli = 0
+    nome = ""
+    fone = ""
+    
+class Documentos:
+    num_doc = 0
+    cod_cli = 0
+    dia_venc = ""
+    dia_pag = ""
+    valor = 0.0
+    juros = 0.0
+    
+
+def main():
+    documentos = []
+    clientes = []
+    op = 1
+    
+    while(op != 0):
+        print("1 - Cadastrar clientes")
+        print("2 - Relatório de clientes")
+        print("3 - Cadastrar documentos")
+        print("4 - Relatório de documentos")
+        print("5 - Excluir clientes sem documentos")
+        print("6 - Excluir documentos individuais pelo número")
+        print("7 - Excluir documentos por cliente")
+        print("8 - Excluir documentos por período")
+        print("9 - Alterar as informações dos clientes")
+        print("10 - Mostrar o total de documentos de determinado cliente")
+        print("0 - Sair")
+        
+        op = int(input("Digite a opção desejada: "))
+    
+        if op == 1:
+            if len(clientes) < 2:
+                cliente = Clientes()
+                cliente.cod_cli = int(input("Código do cliente: "))
+                cliente.nome = input("Nome do cliente: ")
+                cliente.fone = input("Telefone: ")
+                clientes.append(cliente)
+            else:
+                print("\nNão é possível cadastrar, o cadastro está cheio...\n")
+        elif op == 0:
+            pass
+
+    
+main()
