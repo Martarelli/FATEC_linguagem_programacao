@@ -100,16 +100,29 @@ def ExcluirDocumentoPorNumero(documentos, doc_excluir):
         print("Documento Excluido...")
         return doc
     else:
-        print("Documento não encontrado")
+        print("Documento não encontrado...")
         return documentos
             
-
+def ExcluirDocumentosDeCliente(documentos, cod_cli):
+    doc = []
+    for i in documentos:
+        if i.cod_cli == cod_cli:
+            excluido = 1
+        else:
+            doc.append(i)
+            
+    if excluido == 1:
+        print("Exclusão concluida...")
+        return doc
+    else:
+        print("Documento não encontrado...")
+        return documentos
+    
+    
 def main():
     documentos = []
     clientes = []
     op = 1
-
-    
     
     while(op != 0):
         print("1 - Cadastrar clientes")
@@ -195,6 +208,10 @@ def main():
         elif op == 6:
             doc_excluir = int(input("Número do documento: "))
             documentos = ExcluirDocumentoPorNumero(documentos, doc_excluir)
+            
+        elif op == 7:
+            docs_cliente_excluir = int(input("Código do cliente: "))
+            documentos = ExcluirDocumentosDeCliente(documentos, docs_cliente_excluir)
                     
   
                     
