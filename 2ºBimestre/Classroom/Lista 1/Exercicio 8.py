@@ -117,6 +117,21 @@ def ExcluirDocumentosDeCliente(documentos, cod_cli):
     else:
         print("Cliente não encontrado...")
         return documentos
+
+def ExcluirPorPeriodo(documentos, dia_inicial, dia_final):
+    doc = []
+    for i in documentos:
+        if i.dia_venc >= dia_inicial and i.dia_venc <= dia_final:
+            excluido = 1
+        else:
+            doc.append(i)
+            
+    if excluido == 1:
+        print("Exclusão concluida...")
+        return doc
+    else:
+        print("Nenhum documento encontrado no periodo...")
+        return documentos
     
     
 def main():
@@ -213,7 +228,10 @@ def main():
             docs_cliente_excluir = int(input("Código do cliente: "))
             documentos = ExcluirDocumentosDeCliente(documentos, docs_cliente_excluir)
                     
-  
+        elif op == 8:
+            dia_inicial = int(input("Inicio do periodo: "))
+            dia_final = int(input("Final do periodo: "))
+            documentos = ExcluirPorPeriodo(documentos, dia_inicial, dia_final)
                     
         elif op == 0:
             continue
