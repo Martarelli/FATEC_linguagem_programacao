@@ -87,6 +87,23 @@ def ExcluirSemDocumento(clientes, documentos):
          
     return clientes_com_cadastro
 
+def ExcluirDocumentoPorNumero(documentos, doc_excluir):
+    doc = []
+    excluido = 0
+    for i in documentos:
+        if i.num_doc == doc_excluir:
+            excluido = 1
+        else:
+            doc.append(i)
+            
+    if excluido == 1:
+        print("Documento Excluido...")
+        return doc
+    else:
+        print("Documento não encontrado")
+        return documentos
+            
+
 def main():
     documentos = []
     clientes = []
@@ -174,6 +191,11 @@ def main():
             print("")
         elif op == 5:
             clientes = ExcluirSemDocumento(clientes, documentos)
+            
+        elif op == 6:
+            doc_excluir = int(input("Número do documento: "))
+            documentos = ExcluirDocumentoPorNumero(documentos, doc_excluir)
+                    
   
                     
         elif op == 0:
