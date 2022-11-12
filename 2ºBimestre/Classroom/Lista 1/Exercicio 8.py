@@ -139,14 +139,14 @@ def AlterarCliente(clientes, codigo_cliente):
         if i.cod_cli == codigo_cliente:
             i.nome = input("Nome do cliente: ")
             i.fone = input("Telefone: ")
-            doc.append(i)
+            cli.append(i)
             alterado = 1
         else:
-            doc.append(i)
+            cli.append(i)
             
     if alterado == 1:
         print("Alteração concluida...")
-        return doc
+        return cli
     else:
         print("Cliente não encontrado...")
         return documentos
