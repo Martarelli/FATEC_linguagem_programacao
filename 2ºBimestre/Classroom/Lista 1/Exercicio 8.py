@@ -115,7 +115,7 @@ def ExcluirDocumentosDeCliente(documentos, cod_cli):
         print("Exclusão concluida...")
         return doc
     else:
-        print("Documento não encontrado...")
+        print("Cliente não encontrado...")
         return documentos
     
     
