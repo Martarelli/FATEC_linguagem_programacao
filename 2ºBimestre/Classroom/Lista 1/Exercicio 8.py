@@ -150,7 +150,16 @@ def AlterarCliente(clientes, codigo_cliente):
     else:
         print("Cliente não encontrado...")
         return documentos
-    
+
+def ConsultaDocumentosCliente(documentos, codigo_cliente_consulta):
+    qtd_docs = 0
+    for i in documentos:
+        if i.cod_cli == codigo_cliente_consulta:
+            qtd_docs += 1
+
+    print("Foram encontrados %i documentos do cliente código %i"%(qtd_docs,codigo_cliente_consulta))
+   
+ 
 def main():
     documentos = []
     clientes = []
@@ -188,6 +197,7 @@ def main():
                     print("Código já cadastrado...")
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
+        
         elif op == 2:
             if len(clientes) != 0:
                 for i in clientes:
@@ -197,6 +207,7 @@ def main():
                     print("Telefone: ", i.fone)
                     print("------------------------------")
                 print("")
+                
         elif op == 3:
             if len(documentos) < 4:
                 existe = False
@@ -223,6 +234,7 @@ def main():
                 
             else:
                 print("\nNão é possível cadastrar, o cadastro está cheio...\n")
+                
         elif op == 4:
             for i in documentos:
                 print("\n------------------------------")
@@ -234,6 +246,7 @@ def main():
                 print("Juros: R$", i.juros)
                 print("------------------------------")
             print("")
+            
         elif op == 5:
             clientes = ExcluirSemDocumento(clientes, documentos)
             
@@ -253,9 +266,17 @@ def main():
         elif op == 9:
             codigo_cliente_alterar = int(input("Código do cliente: "))
             clientes = AlterarCliente(clientes, codigo_cliente_alterar)
+            
+        elif op == 10:
+            codigo_cliente_consulta = int(input("Código do Cliente: "))
+            ConsultaDocumentosCliente(documentos, codigo_cliente_consulta)
+            
                     
         elif op == 0:
             continue
+        
+        else: 
+            print("OPÇÃO INVÁLIDA")
 
     
 main()
