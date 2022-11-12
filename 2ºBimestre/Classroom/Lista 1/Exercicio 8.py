@@ -133,6 +133,23 @@ def ExcluirPorPeriodo(documentos, dia_inicial, dia_final):
         print("Nenhum documento encontrado no periodo...")
         return documentos
     
+def AlterarCliente(clientes, codigo_cliente):
+    cli = []
+    for i in clientes:
+        if i.cod_cli == codigo_cliente:
+            i.nome = input("Nome do cliente: ")
+            i.fone = input("Telefone: ")
+            doc.append(i)
+            alterado = 1
+        else:
+            doc.append(i)
+            
+    if alterado == 1:
+        print("Alteração concluida...")
+        return doc
+    else:
+        print("Cliente não encontrado...")
+        return documentos
     
 def main():
     documentos = []
@@ -232,6 +249,10 @@ def main():
             dia_inicial = int(input("Inicio do periodo: "))
             dia_final = int(input("Final do periodo: "))
             documentos = ExcluirPorPeriodo(documentos, dia_inicial, dia_final)
+        
+        elif op == 9:
+            codigo_cliente_alterar = int(input("Código do cliente: "))
+            clientes = AlterarCliente(clientes, codigo_cliente_alterar)
                     
         elif op == 0:
             continue
