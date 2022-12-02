@@ -50,8 +50,8 @@ def MostrarClientes(clientes):
             
 def CadastrarCompra(clientes):
     comp = Compras()
-    comp.cod_cli = int(input("Código do cliente: "))
     comp.cod_comp = int(input("Código da compra: "))
+    comp.cod_cli = int(input("Código do cliente: "))
     comp.valor = float(input("Valor da compra: R$ "))
     for i in clientes:
         if i.cod_cli == comp.cod_cli:
@@ -72,7 +72,12 @@ def ComprasPorCliente(compras):
             valor_total += i.valor
     print("O valor total em compras do cliente cód %i é: R$ %.2f"%(codigo, valor_total))
     
-
+def GravarComprasEmArquivo(compras):
+    arquivo = open("compras_prova.csv", "w")
+    arquivo.write("COD_COMP,COD_CLI,VALOR\n")
+    for i in compras:
+        arquivo.write("%i,%i,%.2f\n" %(i.cod_comp, i.cod_cli, i.valor))
+    arquivo.close()
 
 
 def main():
@@ -100,6 +105,12 @@ def main():
             
         elif op == 5:
             ComprasPorCliente(compras)
+            
+        elif op == 6:
+            GravarComprasEmArquivo(compras)
+            
+        elif op == 7:
+            MostrarComprasEmArquivo()
             
         elif op == 9:
             print("Encerrando o programa....")
