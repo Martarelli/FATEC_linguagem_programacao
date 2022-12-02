@@ -59,6 +59,8 @@ def CadastrarCompra(clientes):
     for i in clientes:
         if i.cod_cli == comp.cod_cli:
             i.saldo_cashback -= comp.valor
+            if i.saldo_cashback < 0:
+                i.saldo_cashback = 0
     
     return comp, clientes
 
