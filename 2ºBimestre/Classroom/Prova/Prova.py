@@ -96,7 +96,13 @@ def MostrarComprasEmArquivo():
     arquivo.close()
     
 def CriarGrafico():
-    
+    df1 = pd.read_csv('compras_prova.csv')
+
+    plt.hist(df1["VALOR"], 6 , rwidth=0.75, color="orange")
+    plt.title("VENDAS")
+    plt.xlabel("Valor")
+    plt.ylabel("Quantidade")
+    plt.show()
 
 def main():
     clientes = []
