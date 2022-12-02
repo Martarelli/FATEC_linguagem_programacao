@@ -24,6 +24,9 @@
 #     Na opção 7 apresente todos os dados armazenados no arquivo compras.csv.
 #     Na opção 8 use a coluna valor no gráfico e adote a cor orange da biblioteca Matplotlib
 
+import pandas as pd
+import plotly.express as px
+import matplotlib.pyplot as plt
 class Compras:
     cod_comp = 0
     cod_cli = 0
@@ -91,6 +94,9 @@ def MostrarComprasEmArquivo():
             print(comp,'\t\t',cli,'\t\t',val)
         i += 1
     arquivo.close()
+    
+def CriarGrafico():
+    
 
 def main():
     clientes = []
@@ -123,6 +129,9 @@ def main():
             
         elif op == 7:
             MostrarComprasEmArquivo()
+            
+        elif op == 8:
+            CriarGrafico()
             
         elif op == 9:
             print("Encerrando o programa....")
