@@ -78,7 +78,19 @@ def GravarComprasEmArquivo(compras):
     for i in compras:
         arquivo.write("%i,%i,%.2f\n" %(i.cod_comp, i.cod_cli, i.valor))
     arquivo.close()
-
+    
+def MostrarComprasEmArquivo():
+    i = 0
+    arquivo = open("compras_prova.csv", "r")
+    print("\n-----------COMPRAS CADASTRADAS EM ARQUIVO-----------")
+    for linha in arquivo.readlines():
+        comp, cli, val = linha.strip().split(',')
+        if i == 0:
+            print(comp,'\t',cli,'\t',val)
+        else:
+            print(comp,'\t\t',cli,'\t\t',val)
+        i += 1
+    arquivo.close()
 
 def main():
     clientes = []
@@ -115,15 +127,6 @@ def main():
         elif op == 9:
             print("Encerrando o programa....")
             op = 0
-
-
-
-
-cli = Clientes()
-cli.cod_cli = 1
-cli.nome = 1
-cli.saldo_cashback = 150
-
 
 
 main()
